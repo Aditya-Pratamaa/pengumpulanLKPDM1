@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Tanggal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="date"], .output-date {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Masukkan Tanggal</h2>
+        <input type="date" id="dateInput">
+        <button onclick="submitDate()">Submit</button>
+        <p id="searchData">Tidak Mencari Data</p>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function submitDate() {
+            const dateInput = document.getElementById('dateInput').value;
+            const searchData = document.getElementById('searchData');
+
+            const months = [
+                "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+            ];
+
+            if (dateInput) {
+                console.log('searchData')
+                const date = new Date(dateInput);
+
+                const day = date.getDate();
+                const month = months[date.getMonth()]; // Ngambil nama bulan dari array
+                const year = date.getFullYear();
+
+                searchData.textContent = `${day} ${month} ${year}`;
+            } else {
+                searchData.textContent = 'Silakan pilih tanggal.';
+            }
+        }
+    </script>
+</body>
+</html>

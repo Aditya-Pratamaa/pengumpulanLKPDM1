@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="ada">Ada perekomendasi?</label>
+        
+        <div id="disable">
+        <select name="ada" id="ada" onchange="changeLabel(this)">
+            <option value="yes">Ada</option>
+            <option value="no">Tidak</option>
+        </select>
+
+        <br>
+
+        <div id="name_wrapper">
+        <label for="name" id="name" name="name">Nama Lengkap</label>
+        <input type="text" id="name">
+
+        <br>
+
+        <label for="kategori" id="kategori" name="kategori">Kategori</label>
+        <select name="kategori" id="kategori" onchange="ubah(this)">
+            <option disabled hidden selected>Pilih</option>
+            <option value="PekerjaBRI">Pekerja BRI</option>
+            <option value="Purnabakti">Purnabakti</option>
+        </select>
+
+        <br>
+
+        <label for="nomor" id="nomor" name="nomor">Nomor ID Pegawai</label>
+        <input type="text" id="nomor">
+
+        <br>
+
+        <div id="none">
+        <label for="jabatan" id="jabatan" name="jabatan">jabatan</label>
+        <input type="text" id="jabatan">
+    </div>
+    </form>
+    </div
+</div>
+
+    <script>
+        function changeLabel(e) {
+            let nameWrapper = document.getElementById("name_wrapper");
+            if (e.value == "yes") {
+                nameWrapper.style.display = "block";
+            }else {
+                nameWrapper.style.display = "none";
+            }
+        }
+
+        function ubah(e) {
+            let kategori = document.getElementById("jabatan");
+            if (e.value == "Purnabakti") {
+                none.style.display = "none";
+            }else {
+                none.style.display = "block";
+            }
+        }
+
+        // function ubah(ubah) {
+        //     let kategori = document.getElementById("name_wrapper");
+        //     let jabatan = document.getElementById('jabatan');
+        //     let Purnabakti = document.getElementById('Purnabakti');
+        //     let PekerjaBRI = document.getElementById('PekerjaBRI');
+        //     if (e.value == "PekerjaBRI") {
+        //         nameWrapper.style.display = "block";
+        //     }else {
+        //         jabatan.style.display = "none";
+        //     }
+        // }
+    </script>
+</body>
+</html>

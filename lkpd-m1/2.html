@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            height: 100px;
+            background-color: #6d6d6d;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-align: center;
+            margin: 1rem 5rem;
+        }
+
+        nav ul {
+            display: flex;
+            padding: 0 5rem;
+            list-style: none;
+            gap: 4rem;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        nav ul li a {
+            font-size: 1.3rem;
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        nav ul li a:hover {
+            padding: 5px;
+            border-bottom: 2px solid black;
+        }
+
+        /* card */
+        .main-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+        }
+
+        .card {
+            width: 300px;
+            background-color: antiquewhite;
+            padding: 2rem;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        .card-image {
+            padding: 1rem;
+        }
+
+        .card-info {
+            margin: 1.3rem 2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="img/logo (2).png" alt="logo" width="100">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="card-content">
+            <div class="card">
+                <h1 class="card-title">Lavender</h1>
+                <div class="card-image">
+                    <img src="img/lavender.png" alt="Tulips" width="100">
+                </div>
+                <p class="card-description">
+                    Lavandula is a genus of 47 known species of perennial flowering plants in the mints family,
+                    Lamiaceae. It is native to the Old World, primarily found across the drier, warmer regions of
+                    mainland Eurasia, with an affinity for maritime breezes.
+                </p>
+                <div class="card-info">
+                    <h3><i class="ri-shopping-cart-line"> </i>67k</h3>
+                    <h3><i class="ri-thumb-up-line"></i> 99k</h3>
+                </div>
+                <button>Read more...</button>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <div class="card">
+                <h1 class="card-title">Matahari</h1>
+                <div class="card-image">
+                    <img src="img/matahari.png" alt="Tulips" width="100">
+                </div>
+                <p class="card-description">
+                    Sunflowers plants display a behavior called heliotropism. The flower buds and young blossoms will
+                    face east in the morning and follow the sun as the earth moves during the day.
+                </p>
+                <div class="card-info">
+                    <h3><i class="ri-shopping-cart-line"></i> 12k</h3>
+                    <h3><i class="ri-thumb-up-line"></i> 10k</h3>
+                </div>
+                <button>Read more...</button>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <div class="card">
+                <h1 class="card-title">Tulip</h1>
+                <div class="card-image">
+                    <img src="img/tulips.png" alt="Tulips" width="100">
+                </div>
+                <p class="card-description">
+                    Tulips are spring-blooming perennial herbaceous bulbiferous geophytes in the Tulipa genus. Their
+                    flowers are usually large, showy, and brightly coloured, generally red, orange, pink, yellow, or
+                    white.
+                </p>
+                <div class="card-info">
+                    <h3><i class="ri-shopping-cart-line"> </i>90k</h3>
+                    <h3><i class="ri-thumb-up-line"></i> 100k</h3>
+                </div>
+                <button>Read more...</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

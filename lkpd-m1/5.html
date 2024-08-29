@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Alert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #alertBox {
+            display: none;
+            padding: 10px;
+            margin: 1rem 2rem;
+            font-size: 2rem;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+        .count-down {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 300px;
+            padding: 1rem 1rem;
+            margin: 2rem 3rem;
+        }
+        button {
+            padding: 10px 20px;
+            margin: .3rem;
+            width: 100%;
+            background-color: rgb(29, 173, 29);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        h2 {
+            margin: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div id="count_down" class="count-down">
+        <h1>Hitung Mundur</h1>
+        <p id="alertBox"></p>
+        <button onclick="showCountdownAlert()">Mulai</button>
+        <button onclick="stopCountdownAlert()">Berhenti</button>
+    </div>
+
+    <script>
+        let intervalId;
+        let isPaused = false;
+        let remainingTime = 5;
+
+        function updateDisplay() {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.textContent = `${remainingTime}`;
+            alertBox.style.color = 'black';
+            alertBox.style.display = 'block'; // Tampilkan alertBox
+        }
+
+        function showCountdownAlert() {
+            const alertBox = document.getElementById('alertBox');
+
+            // Jika ada interval aktif, hapus interval
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+
+            // Atur ulang waktu dan tampilkan
+            if (isPaused) {
+                isPaused = false;
+            } else {
+                remainingTime = 5;
+                updateDisplay();
+            }
+
+            intervalId = setInterval(() => {
+                if (isPaused) {
+                    clearInterval(intervalId);
+                    return;
+                }
+
+                remainingTime--;
+                if (remainingTime <= 0) {
+                    clearInterval(intervalId);
+                    alertBox.textContent = "Waktu Habis";
+                    alertBox.style.color = 'red';
+                } else {
+                    updateDisplay();
+                }
+            }, 1000);
+        }
+
+        function stopCountdownAlert() {
+            clearInterval(intervalId);
+            isPaused = true; 
+            console.log(remainingTime);
+        }
+
+        // Menampilkan waktu awal saat halaman dimuat
+        window.onload = updateDisplay;
+    </script>
+</body>
+</html>
